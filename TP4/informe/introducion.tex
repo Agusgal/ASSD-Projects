@@ -1,0 +1,20 @@
+\chapter{Introducción}
+
+En los últimos 10 años el reconocimiento facial se ha convertido en una popular área de investigación y desarrollo y en una de las aplicaciones más exitosas del análisis de imágenes. Dada la naturaleza del problema, especialistas en diversas áreas, como por ejemplo científicos infórmaticos, ingenieros, expertos en neurociencia e incluso psicólogos, se han interesado en su desarrollo.  
+
+El problema del reconocimiento facial puede ser formualdo de la siguiente manera: dados una imagen o video de una escena se quiere identificar o verificar una o más personas dentro del campo de visión utilizando una base de datos con diferentes rostros. 
+
+
+\section{Realización}
+
+Esto se logra por medio de algoritmos de reconocimiento facial que primeramente identifican ciertos rasgos principales sobre el rostro de las personas, por ejemplo, la distancia entre los ojos, los pómulos, la nariz, etc. A partir de estos datos, se genera un modelo matemático del rostro de esta persona, el cual puede utilizarse como una forma de identificación biométrica.
+
+Los beneficios de guardar este modelo matemático en lugar del rostro original son el ahorro en memoria y agilidad de procesamiento, dado que si se guardara la imagen completa la base de datos generada crecería a proporciones poco prácticas en sentido económico y computacional.
+
+Una vez generado el mapa facial del individuo en cuestión, este se compara contra una base de datos de otros mapas faciales. La identificación resultaría positiva en cuanto ambos mapas faciales coincidan dentro de una tolerancia razonable.
+
+\section{Criterios}
+
+A la hora de evaluar un sistema de reconocimiento facial, uno debe tener en cuenta dos números: la proporción de "falsos positivos" y la proporción de "falsos negativos". Un "falso positivo" ocurre cuando el sistema devuelve una coincidencia cuando ambos rostros no son coincidentes, y un "falso negativo" ocurre cuando el sistema determina que no hay una coincidencia cuando en realidad sí coinciden.
+
+Estos problemas pueden ser resultados de diferentes factores que pueden afectar a la generación de los modelos de los rostros: iluminación en la foto, orientación del rostro, resolución de la imagen, objetos cubriendo el rostro, etc.

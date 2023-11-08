@@ -1,0 +1,3 @@
+﻿  FFT.cpp
+C:\Users\Juan Martin\Documents\Visual Studio 2019\Projects\FFT\FFT.h(21,47921): warning C4305: 'argumento': truncamiento de 'double' a 'const std::complex<float>::_Ty'
+  FFT.vcxproj -> C:\Users\Juan Martin\Documents\Visual Studio 2019\Projects\FFT\Debug\FFT.exe

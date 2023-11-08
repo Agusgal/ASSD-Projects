@@ -1,0 +1,2 @@
+C:\Users\Juan Martin\Documents\Visual Studio 2019\Projects\FFT\Debug\FFT.exe
+C:\Users\Juan Martin\Documents\Visual Studio 2019\Projects\FFT\Debug\FFT.pdb

@@ -1,0 +1,55 @@
+\chapter{Efectos de Audio}
+
+%Se implementaron los efectos de audio a la salida de la síntesis: Flanger y Chorus.
+
+\section{Flanger}
+
+Flangeo es un efecto basado en retardos, cuyo origen se traza a las cintas magnéticas. Dos copias de una misma cinta eran alternadamente retardadas y deceleradas para reducir su frecuencia y crear un pequeño retardo entre ambas. No demasiado, porque de lo contrario la señal producida por la suma resultaría en dos copias distinguibles. En este trabajo se implementó el modelo básico.
+
+Matemáticamente, este se puede describir de la forma
+\begin{equation}
+    y(n)=x(n) + g x(n-M(n))
+\end{equation}
+donde $M(n)$ es un retardo variable en el tiempo y $g\in [0,1]$ es el la profundidad del efecto de flangeo. Su función transferencia estará dada de la forma
+
+\begin{equation}
+    H(z)=1+gz^{-M(n)}\quad H(\omega)=1+g \cdot e^{-j\omega M(n)}
+\end{equation}
+
+y su respuesta en frecuencia será dada por
+\begin{equation}
+    |H(\omega)|=\sqrt{1+2g\cos(\omega M(n))+g^2}
+\end{equation}
+
+Para controlar $M(n)$ se utiliza un modulador de baja frecuencia, de manera que el largo de retardo se encuentre entre $1 ms$ y $10 ms$.
+
+El retardo estará dado por
+
+\begin{equation*}
+    M(n)=M_0 + \frac{M_w}{2} \left[1+\sin\left(2\pi \frac{f_{LFO}}{f_s} n\right)\right]
+\end{equation*}
+
+En este caso, se eligió una senoidal como señal moduladora por simplicidad en la implementación.
+
+Un último parámetro de este efecto es la inversión de fase, la cual define si se invertirá el signo de $g$. En algunos casos esto es deseable para no anular la señal continua y otras frecuencias más bajas.
+
+\section{Chorus}
+
+El ``Chorus'', es otro efecto que requiere una implementación similar, pero el rango de retardos estará entre $20-30 ms$. Esto es porque se desea que la señal retardada y la original sean distinguibles. También se utilizan frecuencias más bajas para el modulador.
+
+Se resumieron los parámetros de ambos efectos en la Tabla \ref{tab:effects}
+
+\begin{table}[ht]
+    \begin{center}
+        \begin{tabular}{|c|c|c|}
+            \hline
+            Efecto      &   Flange          &   Chorus      \\
+            \hline
+            Delay       &   $1-10 ms$       &   $20-30 ms$   \\
+            $f_{LFO}$   &   $0.1 - 10 Hz$   &   $0.1-3Hz$  \\
+            \hline
+        \end{tabular}
+        \caption{Características de los efectos}
+        \label{tab:effects}
+    \end{center}
+\end{table}

@@ -1,0 +1,25 @@
+1. Wavetable Synthesis
+	Repeating a number of samples over and over, producing a purely periodic signal.
+
+Y:		Value of the t_th sample -> x(n)
+Y_t=Y_t-p	Wavetable Algorithm
+p:		wavetable length / periodicity parameter
+	Amount of memory / period of the tone (samples)
+
+Initial Conditions completely determine the timbre.
+
+Sine/square/triangle/other simple wave is calculated and loaded with sample frequency f_s. Frequency of the tone is f_s/p.
+
+The wavetable can be seen as a delay line of length p.
+
+	a. How to Generate the Wavetable:
+	
+
+2. Plucked String Algorithm
+
+Y_t = 0.5*(Y_t-p + Y_t-p-1)
+
+Resulting tone: p + 1/2 => f = fs/(p+ 1/2)
+
+Y_t = +- A con probabilidad 0,5. -p =< t =< 0
+
